@@ -243,7 +243,7 @@
 					<div class="form-group col-lg-4">
 						<div style="text-align:left; display:inline"><label class="control-label">이메일</label></div>
 					    <div style=" text-align:right; display:inline">
-					    	<label><span class="control-label" style="width:250px; color:#8d9193; font-size:12px; text-align:right">　　30분 전 Reminder 메일수신</span>
+					    	<label><span class="control-label" style="width:250px; color:#8d9193; font-size:12px; text-align:right" id="reminder"></span>
 					 	    <input type="checkbox" id="rsvEmailCheck" name="rsvEmailCheck" checked>
 					   		<input type="hidden" id="emailCheckValue" name="emailCheckValue">
 					  		</label>
@@ -1082,7 +1082,7 @@ function getInputDayLabel(date) {
 	$("#day").append("("+todayLabel+")");
 }
 
-			
+var reminderInterval;
 $(document).ready(function(){
 	
 	//관리자로 로그인했는지 체크 , 로그인X : null
@@ -1090,7 +1090,7 @@ $(document).ready(function(){
 	
 	//화면 매 설정값(초)마다 refresh
 	 var interValsec;
-
+	
 	   $.ajax({
 	      url : "/AdminManagement/SettingLoad",
 	      dataType : "json",
@@ -1098,6 +1098,10 @@ $(document).ready(function(){
 	      type : "POST",
 	      success : function(data) {
 	         interValsec = data.SET_INDEX_REFRESH+'000';
+	         //reminder메일 수신간격-setting값 반영
+	         reminderInterval = data.SET_EMAIL_TIME;
+	         reminderInterval += "분전 reminder 메일 수신";
+	         $("#reminder").text(reminderInterval);	
 	         setInterval('autoRefresh_div()', interValsec);
 	      },
 	      error : function(request, status, error) {

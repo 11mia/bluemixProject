@@ -67,12 +67,17 @@ public class SchedulerService {
 
 		//현재시간에 이메일 셋팅값을 더함
 		Calendar nowTimeCal = Calendar.getInstance();
+		System.out.println("=========================nowTimeCal에 add하기 전 minute : "+nowTimeCal.get(Calendar.MINUTE));
 		nowTimeCal.add(Calendar.MINUTE, emailTime);
 		int hour = nowTimeCal.get(Calendar.HOUR_OF_DAY);
 		int min = nowTimeCal.get(Calendar.MINUTE);
+		System.out.println("=========================nowTimeCal에 add 후 minute : "+min);
+
 
 		String nowDate = commonService.nowTime();
 		String nowTime = Integer.toString(hour) + ":" + Integer.toString(min)+ ":00";
+		System.out.println("===========nowDate : "+nowDate);
+		System.out.println("=============nowTime : "+nowTime);
 		
 		HashMap<String, Object> dateInformation = new HashMap<String, Object>();
 		dateInformation.put("nowDate", nowDate);

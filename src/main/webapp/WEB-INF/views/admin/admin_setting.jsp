@@ -298,10 +298,10 @@ function checkHour(value){
 }
 
 function checkMin(value){
-	if(value<1 || value>60)
+	 if(value<1 || value>60)
 		return false;
 	else
-		return true;
+		return true; 
 }
 
 	function refreshTimeBtn() {
