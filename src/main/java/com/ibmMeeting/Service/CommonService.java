@@ -78,7 +78,7 @@ public class CommonService {
 		
 		  MimeMessage message = emailSender.createMimeMessage();
 		  
-		  message.setFrom("ibm.gbs.meeting@gmail.com");  
+		  message.setFrom("ibm_gbs_meeting@naver.com");  
 		  message.addRecipient(RecipientType.TO, new InternetAddress(email));
 		  message.setSubject(subject);
 		  message.setText(content, "utf-8", "html");

@@ -46,7 +46,7 @@ public class AdminHistoryController {
 	 */
 	@ResponseBody
 	@RequestMapping("/ReservationUpdate")
-	public Integer reservationUpdate(final HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException, MessagingException, ParseException{
+	public Integer reservationUpdate(final HttpServletRequest request, HttpServletResponse response) throws MessagingException, ParseException{
 		Thread thread = new Thread(new Runnable(){
 
 			public void run() {
