@@ -101,7 +101,7 @@ public class SchedulerService {
 				String rsvEndTimeChange = commonService.timeToString(rsvEndTime);
 
 				String subject = "[예약 Reminder] "  + rsvTitle + " (" + rsvDateString + "(" + rsvDayOfTheWeek + ") " + rsvStartTimeChange + " - " + rsvEndTimeChange	+ " ), " + rsvConfNm;
-				
+				System.out.println("--------예약 reminder메일 보내기-------");
 				String content = 
 						"<html>\r\n" + 
 						"<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n" + 

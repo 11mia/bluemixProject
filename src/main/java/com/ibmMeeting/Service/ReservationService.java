@@ -108,7 +108,7 @@ public class ReservationService {
 		if(reservation.getRsvConfirmState().equals("N")){
 			
 			email = adminDao.getAdminEmail();
-			
+			System.out.println("---------회의실 가예약 확인 메일 보내기----------");
 			subject = "[회의실 가예약] " + rsvTitle + " (" + rsvDateString + "(" + rsvDateOfTheWeek + ") " + rsvStartTimeChange + " - " + rsvDateString + "(" + rsvDateOfTheWeek + ")" + rsvEndTimeChange	+ "), " + rsvConfNm;
 			
 			content = "<html>\r\n" + "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n"
@@ -135,7 +135,8 @@ public class ReservationService {
 			//commonService.sendEmail(email, subject, content);
 		}
 		else {
-			
+			System.out.println("---------회의실 예약 확인 메일 보내기----------");
+
 			subject = "[회의실 예약] " + rsvTitle + " (" + rsvDateString + "(" + rsvDateOfTheWeek + ") " + rsvStartTimeChange + " - " + rsvDateString + "(" + rsvDateOfTheWeek + ") " + rsvEndTimeChange	+ "), " + rsvConfNm;
 			
 			content = "<html>\r\n" + "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n"
