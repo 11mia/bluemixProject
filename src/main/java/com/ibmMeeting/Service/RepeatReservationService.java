@@ -368,7 +368,7 @@ public class RepeatReservationService {
 				"<body>\r\n" + 
 				"\r\n" + 
 				"<div class=\"container\" style=\"display: block!important;max-width: 600px!important;margin: 0 auto!important;clear: both!important;\">\r\n" +
-				"   <a href=\"http://bluemixb.mybluemix.net/\">" +
+			//	"   <a href=\"http://bluemixb.mybluemix.net/\">" +
 				"	<img src=\"https://i.imgur.com/rOpAzMk.png\">\r\n </a>" + 
 				"	<br>\r\n" + 
 				"	<hr size=\"2\" noshade>\r\n" + 
